@@ -1,5 +1,5 @@
 class TodolistsController < ApplicationController
-  before_action :set_todolist, only: %i[ show update destroy ]
+  before_action :set_todolist, only: %i[ show update destroy tasks ]
 
   # GET /todolists
   def index
@@ -11,6 +11,11 @@ class TodolistsController < ApplicationController
   # GET /todolists/1
   def show
     render json: @todolist
+  end
+
+  # GET /todolists/:id/tasks
+  def tasks
+    render json: @todolist.tasks
   end
 
   # POST /todolists
@@ -39,12 +44,10 @@ class TodolistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_todolist
       @todolist = Todolist.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through.
     def todolist_params
       params.expect(todolist: [ :title, :subtitle, :color ])
     end
