@@ -35,6 +35,10 @@ gem "thruster", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
 
+gem 'rack-cors'
+gem 'dotenv-rails'
+gem 'active_model_serializers' # Serializers para ActiveModel, para transformar objetos em JSON
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -47,7 +51,5 @@ group :development, :test do
   
   gem 'rspec-rails'
   gem 'factory_bot_rails' # Factory Bot: biblioteca para criar objetos de teste
-  gem 'active_model_serializers' # Serializers para ActiveModel, para transformar objetos em JSON
-  gem 'dotenv-rails'
   gem 'shoulda-matchers', '~> 5.3' # Matchers adicionais para RSpec
 end
