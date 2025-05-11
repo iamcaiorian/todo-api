@@ -6,7 +6,7 @@ API desenvolvida em Ruby on Rails para gerenciamento de tarefas e listas, seguin
 
 ## 🧩 Diagrama de Classes
 
-<img src="./docs/class-diagram.png" alt="Diagrama de Classes" width="500"/>
+![Diagrama de Classe](./docs/class-diagram.png)
 
 ---
 
