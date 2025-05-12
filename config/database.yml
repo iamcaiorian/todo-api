@@ -1,11 +1,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch("DB_USERNAME", "postgres") %>
-  password: <%= ENV.fetch("DB_PASSWORD", "postgres") %>
-  host: <%= ENV.fetch("DB_HOST", "localhost") %>
-  port: <%= ENV.fetch("DB_PORT", 5432) %>
+  username: postgres
+  password: <%= ENV['TODO_API_DATABASE_PASSWORD'] %>
+  host: localhost
 
 development:
   <<: *default
@@ -17,4 +15,6 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: todo_api_production
+  username: todo_api
+  password: <%= ENV['TODO_API_DATABASE_PASSWORD'] %>
