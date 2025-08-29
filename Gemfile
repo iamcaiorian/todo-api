@@ -51,5 +51,5 @@ group :development, :test do
   
   gem 'rspec-rails'
   gem 'factory_bot_rails' # Factory Bot: biblioteca para criar objetos de teste
-  gem 'shoulda-matchers', '~> 5.3' # Matchers adicionais para RSpec
+  gem 'shoulda-matchers', '~> 6.5' # Matchers adicionais para RSpec
 end
